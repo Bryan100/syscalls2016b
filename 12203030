@@ -1,1 +1,29 @@
+#include<stdio.h>
+int main()
+{
 
+  printf("Hola, soy un primer proceso \n");
+  
+  sleep(9);
+  
+  int id;
+  
+  id = fork();
+  
+  if (id = 0) {
+  
+      printf("Yo soy un 2do proceso identificado con %d \n", getpid() );
+
+      sleep(9);
+  }
+  else {
+  
+      wait(0);
+  
+      printf("Y yo soy el padre del 2do proceso identificado con %d \n", getpid() );
+      
+      printf("Adios! \n");
+      exit(0);
+  }
+
+}
